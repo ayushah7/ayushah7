@@ -1,0 +1,14 @@
+---
+- hosts: leaf1-DC1
+  gather_facts: no
+  tasks:
+  - name: Register variables
+    include_vars:
+      file: "{{lookup('env','PWD')}}/vars/underlay.yml"
+      name: underlay
+  - name: Test variables
+    debug:
+      msg: "{{ underlay }}"
+
+
+
