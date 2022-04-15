@@ -1,0 +1,7 @@
+---
+  - hosts: all
+    gather_facts: no
+    tasks: 
+    - name: Add vlans via src file
+      eos_config:
+        src: vlans.cfg
